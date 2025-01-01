@@ -52,17 +52,16 @@ console.log(nomeCompleto);
 
 
 
-// 6 - Console
+// 6 - CONSOLE
 //console.log("teste!")
 //console.error("erro!")// transmite um erro
 //console.warn("aviso!")// transmite um aviso
 
 
 
-// 7 - if
- 
+// 7 - IF
 
-const m = 10;
+/*const m = 10;
 
 if (m > 5) {
     console.log("m é maior que 5");
@@ -78,11 +77,11 @@ if (user === "maria") {
     console.log("boa tarde"+user)
 }else {
     console.log("Boa tarde "+user)
-}
+}*/
 
 
 // 8 - else
-const loggendIn = false
+/*const loggendIn = false
 
 if (loggendIn){
     console.log("Está autenticado!")
@@ -97,11 +96,11 @@ if (q > 5 && w > 20) {
     console.log("Os números são mais altos");
 }else {
     console.log("Os números não são mais altos");
-}
+}*/
 
 
 // 9 - if else
-if (1 > 2) {
+/*if (1 > 2) {
     console.log("teste")
 }else if (2 > 3){
     console.log("teste 2")
@@ -119,21 +118,21 @@ if (userName === "José"){
     console.log("Olá Matheus, você tem 31 anos")
 } else {
     console.log("Nenhuma condição aceita!")
-}
+}*/
 
 
 
 // 10 - estrutura de repetição - WHILE
-var p = 0
+/*var p = 0
 
 while (p < 5) {
     console.log("O número agora é: "+p)
     p++
-};
+}*/
 
 
 
-// 11 - do while
+// 11 - DO WHILE
 /*
 let o = 10
 
@@ -146,7 +145,7 @@ do {
 
 
  
-// 12 - for
+// 12 - FOR
 /*
 for (let t = 0; t < 10; t++) {
     console.log("passa a visão "+t)
@@ -160,8 +159,8 @@ for (r; r > 0; r--) {
 */
 
 
-// 13 - identação
-for (let u =0; u < 10; u++){
+// 13 - IDENTAÇÃO
+/*for (let u =0; u < 10; u++){
     if(u * 2 > 10) {
         console.log(`Maior que 10! ${u}`)
     } else {
@@ -169,26 +168,65 @@ for (let u =0; u < 10; u++){
             console.log(`deu 0`)
         }
     }
-}
+}*/
 
 
-// 14 - break
-for ( let g = 20; g > 10; g--) {
+// 14 - BREAK
+/*for ( let g = 20; g > 10; g--) {
     console.log(`O valor de g é ${g}`)
 
     if (g === 12) {
         console.log(`O g é 12`)
         break;
     }
-}
+}*/
 
 
-// 15 - continue 
-for (let s = 0; s < 10; s = s + 1) {
+// 15 - CONTINUE
+/*for (let s = 0; s < 10; s = s + 1) {
     //operador resto = %
     if (s % 2 === 0) {
         console.log(`Número par!`)
         continue
     }
     console.log(s);
-}
+}*/
+
+// 16 -SWITCH 
+/*const job = "Advogado"
+
+switch (job) {
+    case "programador":
+        console.log("Você é um programador!")
+        break
+
+    case "Advogado":
+        console.log("Você é um advogado!")
+        break
+
+    case "engenheiro":
+        console.log("Você é um engenheiro!")
+        break
+
+    default:
+        console.log("Profissão não encontrada!")
+}*/
+
+// SWITCH - "ERRADO"
+/*const I = 100
+
+switch (I) {
+    case 200:
+        console.log("I é 200!")
+    
+    case 100:
+        console.log("I é 100!")
+    
+    case 10:
+        console.log("I é 10!")
+
+    default:
+        console.log("I não foi encontrado!")
+}*/
+
+

@@ -340,7 +340,7 @@ console.log(somaInfinita2(5, 6, 1, 23, 5, 6, 3, 5));*/
 // 25 - DESTRUCTURING em Objetos
 
 /* O destructuring em JavaScript é uma funcionalidade introduzida no ES6 que permite extrair dados de arrays ou objetos e atribuí-los a variáveis de maneira mais simples e concisa. Ele facilita o acesso a valores específicos sem a necessidade de acessar manualmente as propriedades ou índices. */
-const teste = {
+/*const teste = {
     nome: "gleidson",
     sobrenome: "santos",
     idade: 22
@@ -352,14 +352,48 @@ console.log(nome, sobrenome, idade);
 
 //renomear variaveis
 const {nome: primeiroNome} = teste
-console.log(primeiroNome)
+console.log(primeiroNome)*/
 
 
 // 26 - DESTRUCTURING com Arrays
 
 /* o destructuring também pode ser utilizado para desestruturar um array em variáveis, A sintaxe é um pouco diferente, agora utilizaremos colchetes[], e não temos nome das chaves */
-const myList = ["gatinho", "cachorro", "panda"]
+/*const myList = ["gatinho", "cachorro", "panda"]
 
 const [animalA, animalB, animalC] = myList
 
-console.log(animalC, animalA, animalB)
+console.log(animalC, animalA, animalB)*/
+
+
+// 27 - JSON
+const myJson = '{"nome": "Gleidson" , "idade": 22, "job": "Desenvolvedor", "skills": ["javascript", "html", "css", "sql"]}'
+
+console.log(myJson)
+console.log(typeof myJson) // por enquantp é só uma string, mas vamos converter para object
+
+
+
+// JSON para objeto e objeto para JSON
+
+/* agora será um objeto */
+const myObject = JSON.parse(myJson);
+
+console.log(myObject)
+console.log(typeof myObject)
+console.log(myObject.nome) // agora podemos acessar uma propriedade/variavel
+
+
+//JSON inválido
+
+/*const badJson = '{"nome": gleidson, "age": 22}'
+const myBadObject = JSON.parse(badJson)*/
+
+
+// Adicionando mais uma propriedade
+myObject.isOpenToWork = true // propriedade true adicionada
+
+console.log(myObject)
+
+//convertendo para string denovo, para ser implementado para api, que é a formatação que a api aceita
+const myNewJson = JSON.stringify(myObject)
+console.log(myNewJson) 

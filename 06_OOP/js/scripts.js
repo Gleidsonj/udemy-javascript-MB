@@ -133,7 +133,7 @@ console.log(husky)
 
 
 
-// 8 - MÉTODOS NA FUNÇÃO CONSTRUTORA
+// 8 - MÉTODOS NA FUNÇÃO CONSTRUTORA --------------------------
 // implementando método na função cachorro
 Cachorro.prototype.uivar = function () {
     console.log("auuuuuuuu!")
@@ -151,7 +151,7 @@ husky.uivar()
 
 
 
-// 9 - CLASSES
+// 9 - CLASSES ES6 ----------------------
 // mais usado e mais moderno
 /* Vantagens da Classe ES6:
 
@@ -168,3 +168,118 @@ class cachorroClass{
 const bobs = new cachorroClass("tob", "labrador")
 
 console.log(bobs)
+
+//mais um exemplo
+class Pessoa {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    falar() {
+        console.log(`Olá, meu nome é ${this.nome}.`)
+    }
+}
+
+const pessoa1 = new Pessoa("Gleidson", 22);
+console.log(pessoa1);
+pessoa1.falar()
+
+//Olhando o prototype
+console.log(Object.getPrototypeOf(pessoa1));
+
+
+
+// 10 - MAIS SOBRE CLASSES ----------------------
+class caminhao {
+    constructor(eixos, cor) {
+        this.eixos = eixos;
+        this.cor = cor;
+    }
+
+    sobreCaminhao() {
+        console.log(`O caminhão tem ${this.eixos} e a cor ${this.cor}`);
+    }
+}
+
+const caminhaoA = new caminhao(8, "vermelho")
+
+console.log(caminhaoA)
+caminhaoA.sobreCaminhao();
+
+//mais um exemplo
+class carros {
+    constructor (marca, ano){
+        this.marca = marca;
+        this.ano = ano;
+    }
+
+    sobreCarro() {
+        console.log(`Então, meu carro é um ${this.marca} e é de ${this.ano}.`)
+    }
+    
+}
+
+const carro1 = new carros("corola" , 2002)
+
+console.log(carro1)
+
+carro1.sobreCarro();
+
+
+
+// 11 - OVERRIDE (sobrescreve) - sobrescrevendo propriedades ------------------
+class moto {
+    constructor(nome, cor) {
+        this.nome = nome;
+        this.cor = cor;
+    }
+}
+
+const moto1 = new moto("titan", "vermelho")
+console.log(moto1)
+
+//criando uma propriedade no prototypo
+moto.prototype.cor = "sem cor!"
+
+const moto2 = new moto("CG15")  
+
+
+console.log(moto2)// apareca normal mas a cor será undefined
+
+console.log(moto.prototype.cor)//aqui veremos a propriedade que está no prototypo
+
+
+
+
+// 12 - SYMBOL  ----------------------------------
+/*
+Symbol() cria um identificador único.
+Esse símbolo será usado como chave de propriedade "oculta".
+Propriedades Symbol não aparecem em loops for...in ou Object.keys(), tornando-as "privadas" para uso interno.
+*/
+class aviao {
+    constructor(nome, turbinas) {
+        this.nome = nome;
+        this.turbinas = turbinas;
+    }
+}
+
+
+const asas = Symbol() // Symbol() cria um identificador único.
+
+aviao.prototype[asas] = 2;
+/* Estamos adicionando uma nova propriedade no prototype da classe aviao.
+[asas] significa que a chave da propriedade é o símbolo asas.
+O valor associado é 2 (representando duas asas no avião).
+Como a propriedade está no prototype, todas as instâncias de aviao compartilharão essa propriedade. */
+
+const latam = new aviao("latam", 5);
+
+console.log(latam);
+
+console.log(latam[asas]) //Assim acessaremos o valor do Symbol
+
+
+
+// 13 - GETTERS e SETTERS ---------------------------

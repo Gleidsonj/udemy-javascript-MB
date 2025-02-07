@@ -170,7 +170,7 @@ const bobs = new cachorroClass("tob", "labrador")
 console.log(bobs)
 
 //mais um exemplo
-class Pessoa {
+/*class Pessoa {
     constructor(nome, idade) {
         this.nome = nome;
         this.idade = idade;
@@ -186,7 +186,7 @@ console.log(pessoa1);
 pessoa1.falar()
 
 //Olhando o prototype
-console.log(Object.getPrototypeOf(pessoa1));
+console.log(Object.getPrototypeOf(pessoa1)); */
 
 
 
@@ -252,7 +252,7 @@ console.log(moto.prototype.cor)//aqui veremos a propriedade que está no prototy
 
 
 
-// 12 - SYMBOL  ----------------------------------
+// 12 - SYMBOL 7/ -----------------------------------
 /*
 Symbol() cria um identificador único.
 Esse símbolo será usado como chave de propriedade "oculta".
@@ -282,4 +282,89 @@ console.log(latam[asas]) //Assim acessaremos o valor do Symbol
 
 
 
-// 13 - GETTERS e SETTERS ---------------------------
+// 13 - GETTERS e SETTERS --------------------------- não falo sobre setters
+// Definição da classe Pessoa
+class Pessoa {
+    // O método constructor é chamado quando criamos uma nova instância da classe
+    constructor (nome, tags) {
+        this._nome = nome;  // Armazena o nome na propriedade privada "_nome"
+        this._tags = tags;  // Armazena as tags na propriedade privada "_tags" (não está sendo usada no getter)
+    }
+
+    // Getter para acessar o nome formatado
+    get nome(){
+        return this._nome.toUpperCase(); // Retorna o nome em letras maiúsculas
+    }
+}
+
+// Criando uma instância da classe Pessoa
+const pessoaA = new Pessoa("gleidson"); // Criamos um novo objeto do tipo Pessoa
+
+// Exibindo o nome da pessoa em maiúsculas usando o getter
+console.log(pessoaA.nome); // Saída: "GLEIDSON"
+
+
+
+// 14 - HERANÇA 
+/*
+A herança é um dos princípios da Programação Orientada a Objetos (POO) e permite que uma classe herde propriedades e métodos de outra classe.
+
+Isso evita a repetição de código e facilita a reutilização, organização e manutenção do código.
+
+Em JavaScript, podemos implementar herança de duas formas principais: 
+1️⃣ Usando prototype (modelo antigo, antes do ES6)
+2️⃣ Usando class e extends (modelo moderno, ES6)
+*/
+
+// Definição da classe base (superclasse)
+class Lobo { 
+    constructor(nome) {
+        this.nome = nome; // Define a propriedade "nome"
+    }
+}
+
+// Definição da classe Shark que herda de Lobo (subclasse)
+class Shark extends Lobo { 
+    constructor(nome, patas) {
+        // Chama o construtor da classe pai (Lobo)
+        super(nome); // Chama o construtor da superclasse corretamente
+        
+        // Define a nova propriedade "patas"
+        this.patas = patas; 
+    }
+}
+
+// Criando um objeto da classe Shark
+const guelry = new Shark("alabama", 4);
+
+// Exibindo o objeto guelry no console
+console.log(guelry); 
+// Esperado: Shark { nome: "alabama", patas: 4 }
+
+// Exibindo apenas a propriedade "patas"
+console.log(guelry.patas); // Esperado: 4
+
+
+
+
+// 15 - INSTANCEOF
+class Moto {
+    constructor (marca, cilindros) {
+        this.marca = marca;
+        this.cilindros = cilindros;
+    }
+}
+
+class honda extends Moto {
+    constructor (marca, cilindros){
+        super(marca, cilindros)
+    }
+}
+
+const CG10 = new honda("honda", 300)
+
+console.log(CG10 instanceof honda)
+console.log(CG10 instanceof Moto)
+
+console.log(honda instanceof Moto)
+console.log(Moto instanceof honda)

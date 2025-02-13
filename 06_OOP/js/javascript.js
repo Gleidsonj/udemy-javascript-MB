@@ -55,3 +55,126 @@ console.log("------------------------------------------------------------")
 
 
 
+class dadoBase {
+    constructor(nome, cargo) {
+        this.nome = nome;
+        this.cargo = cargo;
+    }
+
+    falar () {
+        console.log(`Funcionarios - Nome: ${this.nome} Cargo: ${this.cargo} Idade:${this.idade}.`)
+    }
+}
+
+class funcionario extends dadoBase {
+    constructor(nome, cargo, idade) {
+        super(nome, cargo)
+        this.idade = idade;
+    }
+}
+
+const joaoFuncionario = new funcionario("joão", "repositor", 22)
+console.log(joaoFuncionario)
+console.log(joaoFuncionario.falar())
+
+
+
+//---------------------------------------------------------------------
+console.log("----------------------------------------------------------------")
+//---------------------------------------------------------------------
+
+
+// MÉTODOS EM HERANÇAS 
+// Classe base (superclasse)
+class Animal {
+    constructor(nome) {
+        this.nome = nome;
+    }
+
+    // Método da superclasse
+    fazerSom() {
+        console.log("Som genérico...");
+    }
+}
+
+// Subclasse que herda de Animal
+class Cachorro extends Animal {
+    constructor(nome, raca) {
+        super(nome); // Chama o construtor da superclasse
+        this.raca = raca;
+    }
+}
+
+// Criando um objeto da subclasse
+const dog = new Cachorro("Rex", "Labrador");
+
+// Chamando um método herdado
+dog.fazerSom(); // Saída: "Som genérico..."
+
+
+
+//------------------------------------------------------------------------------------
+console.log("-------------------sobrescrevendo métodos--------------------")
+//------------------------------------------------------------------------------------
+
+class ANimal {
+    constructor(nome) {
+        this.nome = nome;
+    }
+
+    fazendoSom() {
+        console.log("Som genérico...");
+    }
+}
+
+class cachorro extends ANimal {
+    constructor(nome, raca) {
+        super(nome);
+        this.raca = raca;
+    }
+
+    // Sobrescrevendo o método da superclasse
+    fazendoSom() {
+        console.log("Au Au! 🐶");
+    }
+}
+
+const Dog = new cachorro("Rex", "Labrador");
+
+Dog.fazendoSom(); // Saída: "Au Au! 🐶"
+
+
+
+
+//--------------------------------------------------------------------
+console.log("---------------------------------Chamando um Método da SuperClasse com 'SUPER'-------------------------------------------")
+//--------------------------------------------------------------------
+
+
+class ANImal {
+    constructor(nome) {
+        this.nome = nome;
+    }
+
+    emitirSom() {
+        console.log("Som genérico...");
+    }
+}
+
+class Gato extends ANImal {
+    constructor(nome) {
+        super(nome);
+    }
+
+    // Sobrescrevendo o método, mas chamando o original da superclasse
+    emitirSom() {
+        super.emitirSom(); // Chama o método da superclasse
+        console.log("Miau Miau! 🐱");
+    }
+}
+
+const gato = new Gato("Whiskers");
+gato.emitirSom();
+// Saída:
+// "Som genérico..."
+// "Miau Miau! 🐱"

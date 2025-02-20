@@ -86,7 +86,7 @@ catch (error) {
 
 // 7 - FINALLY
 // Inicia um bloco try, onde tentamos executar um código que pode gerar um erro
-try {
+/*try {
     // Realiza uma divisão por zero (10 / 0)
     // Em JavaScript, isso não gera um erro, mas retorna "Infinity"
     let resultado = 10 / 0;
@@ -102,4 +102,17 @@ catch (erro) {
 // O bloco finally é sempre executado, independentemente de erro ou não
 finally {
     console.log("Esse bloco sempre será executado.");
+}*/
+
+
+
+// 8 - ASSERTION
+function checkArray (arr) {
+    if (arr === 0) {
+        throw new Error("O array precisa ter elementos")
+    } else {
+        console.log(`O array tem ${arr.length} elementos`)
+    }
 }
+
+checkArray([]);

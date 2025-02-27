@@ -171,6 +171,7 @@ const customGreeting = (name, greet = "Olá") => {
 console.log(customGreeting("Gleidson"))
 console.log(customGreeting("Julia" , "Bom dia"))
 
+
 // repeat
 const repeatText = (text, repeat = 2) => {
     for (let i = 0; i < repeat; i++)
@@ -178,65 +179,3 @@ const repeatText = (text, repeat = 2) => {
 }
 
 repeatText("Flamengo campeão!!!")
-
-
-
-// 9 - CLOSURE
-/*function someFunction () {
-    let txt = "Alguma coisa"
-
-    function display(){
-        console.log(txt);
-    }
-    display()
-}
-
-someFunction()*/
-
-// 10 - MAIS SOBRE CLOSURE
-/*const multiplicationClosure = (n) => {
-    return(m) => {
-        return n * m;
-    }
-}
-
-const c1 = multiplicationClosure(5)
-const c2= multiplicationClosure(10)
-
-console.log(c1)
-console.log(c2)
-console.log(c1(5))
-console.log(c2(10))*/
-
-
-
-// 11 - RECURSION
-/*const untilten = (n, m) => {
-    if (n < m){
-        console.log("A funçaõ parou de funcionar!")
-    }else {
-        const x = n - m;
-
-        console.log(x);
-
-        untilten(x, m);
-    }
-}
-
-untilten(90, 9)*/
-
-
-// mais um exemplo
-/*function factorial(x) {
-    if (x === 0) {
-        return 1;
-    } else {
-        return x * factorial(x - 1);
-    }
-}
-
-const num = 6;
-
-const result = factorial(num);
-
-console.log(`O factorial do número ${num} é ${result}`);*/

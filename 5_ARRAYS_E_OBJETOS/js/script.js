@@ -22,3 +22,5 @@ const numbers = [5, 3, 7]
 
 console.log(numbers.length)
 console.log(numbers["length"])
+
+console.log("conflito da peste")

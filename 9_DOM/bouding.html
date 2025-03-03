@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getBoundingClientRect</title>
+    <style>
+        /* Estilização da div com ID "bouding" */
+        #bouding {
+            width: 200px; /* Define a largura do elemento como 200px */
+            height: 150px; /* Define a altura do elemento como 150px */
+            background-color: lightblue; /* Define a cor de fundo azul claro */
+            margin: 50px; /* Adiciona espaçamento externo de 50px ao redor do elemento */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Div que será analisada -->
+    <div id="bouding">Eu sou um bloco</div>
+
+    <!-- Botão que ao ser clicado chama a função mostrarDimensoes() -->
+    <button onclick="mostrarDimensoes()">Ver dimensões</button>
+
+    <script>
+        // Função responsável por obter e exibir as dimensões do elemento "bouding"
+        function mostrarDimensoes() {
+            // Obtém a referência do elemento pelo ID "bouding"
+            const product2 = document.getElementById("bouding");
+
+            // Obtém as dimensões e posição do elemento em relação à tela
+            const valorDasDimencoes = product2.getBoundingClientRect();
+
+            // Exibe um alerta com as informações obtidas
+            alert(
+                `Posição X: ${valorDasDimencoes.left}px\n` + // Distância da esquerda da tela
+                `Posição Y: ${valorDasDimencoes.top}px\n` + // Distância do topo da tela
+                `Largura: ${valorDasDimencoes.width}px\n` + // Largura do elemento
+                `Altura: ${valorDasDimencoes.height}px` // Altura do elemento
+            );
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    </body>
+    <!-- createElement e insertBefore -->
+
+    <ul id="minhaLista">
+        <li>Item 1</li>
+        <li id="item2">Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        // 1 - Cria um novo item de lista (uma nova linha em branco)
+        const novoItem = document.createElement("li")
+        // Coloca um texto nesse novo item
+        novoItem.textContent = "Novo item"
+
+
+        // 2 - Encontra a lista onde vamos inserir o novo item
+        const lista = document.getElementById("minhaLista")
+        // Encontra o item que já existe e antes do qual queremos colocar o novo item
+        const item2 = document.getElementById("item2")
+
+
+        // 3 - Insere o novo item antes do "Item 2"
+        lista.insertBefore(novoItem, item2)
+    </script>
+</body>
+</html>

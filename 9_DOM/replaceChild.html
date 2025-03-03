@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de replaceChild</title>
+</head>
+<body>
+  <!-- Elemento pai que agrupa os elementos internos.
+       Aqui, o <div id="container"> é o "pai" do parágrafo que será substituído.
+       Agrupar elementos facilita a organização e manipulação do DOM. -->
+  <div id="container">
+    <!-- Parágrafo original que será substituído.
+         Ele possui um id para que possamos localizá-lo facilmente no JavaScript. -->
+    <p id="paragrafo">Este é o parágrafo original.</p>
+  </div>
+
+  <script>
+    // 1. Cria um novo elemento <p> (um novo parágrafo)
+    // Usamos document.createElement("p") para criar um nó que ainda não está na página.
+    const novoParagrafo = document.createElement("p");
+
+    // 2. Define o conteúdo de texto do novo parágrafo
+    // textContent atribui o texto que será exibido dentro do elemento <p>.
+    novoParagrafo.textContent = "Esse é o paragráfo substituto!";
+
+    // 3. Seleciona o elemento pai onde o parágrafo original está contido
+    // Usamos getElementById para localizar o <div> com id "container".
+    const container = document.getElementById("container");
+
+    // 4. Seleciona o parágrafo antigo que queremos substituir
+    // Isso nos permite identificar exatamente qual elemento será removido.
+    const paragrafoAntigo = document.getElementById("paragrafo");
+
+    // 5. Substitui o parágrafo antigo pelo novo parágrafo
+    // O método replaceChild recebe dois parâmetros:
+    // - Primeiro: o novo elemento que será inserido.
+    // - Segundo: o elemento antigo que será removido.
+    // Dessa forma, o novo parágrafo ocupará exatamente o lugar do antigo.
+    container.replaceChild(novoParagrafo, paragrafoAntigo);
+
+    /* Por que usamos esse método?
+       - replaceChild é útil para atualizar parte do conteúdo da página sem precisar recarregar tudo.
+       - Ao substituir elementos, conseguimos atualizar dinamicamente a interface com novas informações.
+       - Esse método mantém a estrutura do DOM intacta, apenas trocando um elemento pelo outro.
+    */
+  </script>
+</body>
+</html>

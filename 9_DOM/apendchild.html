@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de appendChild</title>
+</head>
+<body>
+  <!-- Nossa lista, que funciona como um "container" -->
+  <ul id="lista">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <script>
+    // 1. Cria um novo elemento <li> (um novo item para a lista)
+    const novoItem = document.createElement("li");
+    // Define o texto que será exibido no novo item
+    novoItem.textContent = "Item 3";
+
+    // 2. Seleciona o elemento pai, que é a lista (<ul>)
+    const lista = document.getElementById("lista");
+
+    // 3. Adiciona o novo item ao final da lista usando appendChild
+    lista.appendChild(novoItem);
+  </script>
+</body>
+</html>
